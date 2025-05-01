@@ -8,3 +8,19 @@ O programa deve totalizar separadamente e exibir na tela as quantidades de produ
 industriais vendidos. Se o dígito T do código não for 1 ou 2 deve ser mostrado "Tipo Inválido" e a
 quantidade deve ser ignorada.'''
 
+cod = 1
+prod = 0
+typeproduct = [0, 0]
+while cod > 0:
+    cod = int(input("Digite o codigo do tipo do produto: "))
+    if cod != 1 and cod != 2:
+        print("Codigo de produto invalido")
+    elif cod == 1:
+        typeproduct[0] += 1
+        prod = input("Digite o codigo do produto: ")
+    elif cod == 2:
+        typeproduct[1] += 1
+        prod = input("Digite o codigo do produto: ")
+else:
+    print(f"Total de produtos residenciais: {typeproduct[0]} ")
+    print(f"Total de produtos industriais: {typeproduct[1]} ")
