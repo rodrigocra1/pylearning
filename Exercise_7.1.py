@@ -1,3 +1,5 @@
+'''Altere a solução do ex.resolvido 7.3 para exibir os números reais da lista com duas casas decimais.'''
+
 '''Escreva um programa que leia um número inteiro N. Em seguida leia N números reais carregando-
 os em uma lista. Ao final exiba os elementos da lista na tela, sendo um em cada linha'''
 
@@ -8,4 +10,4 @@ for i in range(N):
     L.append(x)
 print("\nResultado")
 for valor in L:
-    print(f"  {valor}")
+    print(f"  {valor:.2f}")
