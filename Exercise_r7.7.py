@@ -5,11 +5,19 @@ que zero. Para cada valor de X verifique se ele está ou não na lista gerada. C
 a quantidade de ocorrências.'''
 
 from random import randint
-
+# primeira parte
 lst = []
-qtde = int(input("Digire a qtde: "))
+qtde = int(input("Digite a qtde: "))
 
 for i in range(qtde):
-    a = randint(1, 20)
-    lst.append(a)
+    lst.append(randint(1, 20))
 print(f"Lista gerada\n {lst}")
+
+# segunda parte
+X = 1
+while X > 0:
+     X = int(input("Digite X: "))
+     if X in lst:
+         print(f"   há {lst.count(X)} ocorrencias de {X} na lista")
+     else:
+         print(f"{X} não está na lista")
