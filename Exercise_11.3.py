@@ -13,4 +13,34 @@ Dicas/sugestões (você pode segui-las ou não – é sua escolha)
 - Gere os dados e coloque no dicionário. Depois grave no arquivo de saída.
 - O valor dos elementos do dicionário pode ser no formato de tupla ou de dicionário aninhado.'''
 
-from random import randint
+import random
+
+from numpy.random import randint
+
+linhas = int(input('Digite o numero de linhas: '))
+
+if linhas < 10:
+    linhas = int(input('Digite um numero maior ou igual a 10: '))
+elif linhas > 10000:
+    linhas = int(input("Digite um numero menor que 10.000: "))
+
+else:
+    arqEstoque = open('Estoque.csv', 'w')
+    Estoque = {}
+
+    while len(Estoque) < linhas:
+        codlist = (randint(10000, 50000))
+        while codlist in Estoque:
+            codlist = (randint(10000, 50000))
+        qteEstoque = (randint(1, 3800))
+        precoUni = (round(random.uniform(1.80, 435.90), 2))
+        aliquota = [7, 12, 18]
+        aliquotaList = (random.choice(aliquota))
+        valores = {'Quantidade': qteEstoque, 'Unitario': precoUni, 'Aliquota': aliquotaList}
+        Estoque[codlist] = valores
+
+    for codlist, dados in Estoque.items():
+        arqEstoque.write(f'{codlist};{dados['Quantidade']};{dados['Unitario']};{dados['Aliquota']}\n')
+    arqEstoque.close()
+    print(Estoque)
+
