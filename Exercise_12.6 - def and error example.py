@@ -2,7 +2,6 @@
 for outro o retorno da função deve ser o string "Inválido".
 Escreva o programa principal para testar a função.'''
 
-import datetime
 
 def toMonth(numMonth):
     monthName = {
